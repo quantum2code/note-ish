@@ -42,7 +42,7 @@ body {
 #plus {
     background-color: rgb(234, 234, 234);
     border: 1px solid rgb(182, 182, 182);
-    border-radius: 1.5rem;
+    border-radius: 1.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,8 +109,9 @@ body {
 .mark-btn span, .delete-btn span {
     user-select: none;
     pointer-events: none;
-    color: rgb(52, 49, 40);
+    color: rgb(70, 64, 57);
 }
+
 
 .filled-mark {
     font-variation-settings: 'FILL' 1;
@@ -118,7 +119,7 @@ body {
 
 .plus-btn {
     font-size: 120pt;
-    color: rgb(170, 170, 170);
+    color: rgb(188, 188, 188);
 }
 
 /* #btn-mark {
