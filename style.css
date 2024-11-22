@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --card-container-width: 20rem;
+}
+
+body {
+    background: #dad2b1;
+}
+
+* *::before *::after {
+    box-sizing: border-box;
+}
+.container {
+    margin: auto;
+    align-items: center;
+    /* justify-content: center; */
+    max-width: 95vw;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+    z-index: -1;
+}
+
+.card {
+    width: var(--card-container-width);
+    height: var(--card-container-width);
+    /* border: 2px solid limegreen; */
+    
+}
+
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: 0.5rem;
+    column-gap: 0.25rem;
+    transition: scale 200ms cubic-bezier(.19,-0.14,.41,-0.07);
+}
+
+#plus {
+    background-color: rgb(234, 234, 234);
+    border: 1px solid rgb(182, 182, 182);
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    height: 70%;
+    cursor: pointer;
+}
+
+
+.area {
+    padding: 1.5rem;
+    background-color: rgb(234, 234, 234);
+    border: 1px solid rgb(182, 182, 182);
+    grid-column: 1/5;
+    grid-row: 1/5;
+    border-radius: 1.7rem;
+    box-shadow: rgba(145, 143, 127, 0.2) 0px 25px 30px;
+    transition: box-shadow 300ms cubic-bezier(.07,.56,.24,1.27);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.btn-container {
+    grid-column: 1/3;
+    display: flex;
+    gap: 0.25rem;
+    /* border: 2px solid blue; */
+    transform: translateY(-5rem);
+    transition: transform 300ms cubic-bezier(.07,.56,.24,1.27);
+    z-index: 0;
+}
+.btn-container.popup {
+    transform: translateY(0);
+}
+
+.btn {
+    background-color: rgb(234, 234, 234);
+    border: 1px solid rgb(182, 182, 182);
+    box-shadow: rgba(145, 143, 127, 0.2) 0px 5px 20px;
+    /* border: 2px solid red; */
+    border-radius: 1.5rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.text-area {
+    overflow-wrap:break-word;
+    outline: 0;
+    /* border: 1px solid black; */
+    height: 90%;
+    width: 90%;
+    overflow: auto;
+    font-family: "Sour Gummy", monospace;
+    font-size: 1.2rem;
+    color: rgb(79, 79, 79);
+}
+
+.mark-btn, .delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mark-btn span, .delete-btn span {
+    user-select: none;
+    pointer-events: none;
+    color: rgb(52, 49, 40);
+}
+
+.filled-mark {
+    font-variation-settings: 'FILL' 1;
+}
+
+.plus-btn {
+    font-size: 120pt;
+    color: rgb(170, 170, 170);
+}
+
+/* #btn-mark {
+    font-variation-settings: 'FILL' 0;
+} */
+
+
+
+
