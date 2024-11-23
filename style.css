@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --card-container-width: 20rem;
+    --card-container-width: 25rem;
     --card-border-color: rgb(191, 177, 121);
     --card-background-color: rgb(255, 253, 237);
 }
@@ -50,7 +50,8 @@ body {
     height: 10rem;
 }
 .container {
-    margin: auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
     align-items: center;
     justify-content: center;
     max-width: 95vw;
@@ -80,9 +81,6 @@ body {
     background-color: var(--card-background-color);
     border: 3px dashed rgb(191, 187, 154);
     border-radius: 1.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 1rem;
     height: 70%;
     cursor: pointer;
@@ -98,7 +96,7 @@ body {
     border-radius: 1.7rem;
     box-shadow: rgba(145, 143, 127, 0.2) 0px 5px 5px;
     transition: box-shadow 300ms ease;
-    transition: transform 400ms cubic-bezier(.07,.56,.24,1.27);
+    transition: transform 400ms ease;
     z-index: 1;
     cursor: pointer;
 }
@@ -113,7 +111,7 @@ body {
     display: flex;
     gap: 0.25rem;
     /* border: 2px solid blue; */
-    transform: translateY(-5rem);
+    transform: translateY(calc(var(--card-container-width) / 3 * -1));
     transition: transform 300ms cubic-bezier(.07,.56,.24,1.27);
     z-index: 0;
     padding-left: 1rem;
@@ -164,6 +162,29 @@ body {
 .plus-btn {
     font-size: 120pt;
     color: rgb(190, 185, 160);
+}
+.plus-m {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* @media (max-width: 700px) {
+    :root {
+        --card-container-width: 30rem;
+    }
+} */
+
+@media (max-width: 500px) {
+   :root {
+        --card-container-width: 30rem;
+   } 
+   .container {
+    row-gap: 0rem;
+   }
+   .btn-container {
+    padding-bottom: 1.5rem;
+   }
 }
 
 /* #btn-mark {
