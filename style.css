@@ -1,20 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --card-container-width: 20rem;
+    --card-border-color: rgb(191, 177, 121);
+    --card-background-color: rgb(255, 253, 237);
 }
 
 body {
-    background: #dad2b1;
+    margin: 0;
+    padding: 0;
+    background: #ebdd59;
 }
 
 * *::before *::after {
     box-sizing: border-box;
 }
+.navbar {
+    width: 100%;
+    height: 6rem;
+    position: fixed;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,.6) 0%, rgba(255,255,255,0.3) 60%, rgba(255,255,255,0) 100%); 
+    backdrop-filter: blur(20px);
+    z-index: 3;
+}
+.title {
+    display: flex;
+    align-items: center;
+    color: rgb(113, 91, 2);
+}
+.title-main {
+    font-size: 2.5rem;
+    font-family: "Sour Gummy";
+    font-weight: 700;
+}
+.title-italic {
+    font-size: 2.5rem;
+    font-family: "Crimson Pro";
+    font-weight: 300;
+    font-style: italic;
+}
+
+.buffer {
+    width: 100%;
+    height: 10rem;
+}
 .container {
     margin: auto;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     max-width: 95vw;
     display: flex;
     flex-wrap: wrap;
@@ -27,7 +65,6 @@ body {
     width: var(--card-container-width);
     height: var(--card-container-width);
     /* border: 2px solid limegreen; */
-    
 }
 
 .card-container{
@@ -36,12 +73,12 @@ body {
     grid-template-rows: repeat(5, 1fr);
     row-gap: 0.5rem;
     column-gap: 0.25rem;
-    transition: scale 200ms cubic-bezier(.19,-0.14,.41,-0.07);
+    transition: scale 300ms cubic-bezier(.19,-0.14,.41,-0.07);
 }
 
 #plus {
-    background-color: rgb(234, 234, 234);
-    border: 1px solid rgb(182, 182, 182);
+    background-color: var(--card-background-color);
+    border: 3px dashed rgb(191, 187, 154);
     border-radius: 1.7rem;
     display: flex;
     align-items: center;
@@ -54,15 +91,21 @@ body {
 
 .area {
     padding: 1.5rem;
-    background-color: rgb(234, 234, 234);
-    border: 1px solid rgb(182, 182, 182);
+    background-color: var(--card-background-color);
+    border: 1.5px solid var(--card-border-color);
     grid-column: 1/5;
     grid-row: 1/5;
     border-radius: 1.7rem;
-    box-shadow: rgba(145, 143, 127, 0.2) 0px 25px 30px;
-    transition: box-shadow 300ms cubic-bezier(.07,.56,.24,1.27);
+    box-shadow: rgba(145, 143, 127, 0.2) 0px 5px 5px;
+    transition: box-shadow 300ms ease;
+    transition: transform 400ms cubic-bezier(.07,.56,.24,1.27);
     z-index: 1;
     cursor: pointer;
+}
+
+.area:focus-within {
+    transform: translateY(-0.5rem);
+    box-shadow: rgba(145, 143, 127, 0.2) 0px 20px 30px;
 }
 
 .btn-container {
@@ -73,17 +116,18 @@ body {
     transform: translateY(-5rem);
     transition: transform 300ms cubic-bezier(.07,.56,.24,1.27);
     z-index: 0;
+    padding-left: 1rem;
 }
 .btn-container.popup {
     transform: translateY(0);
 }
 
 .btn {
-    background-color: rgb(234, 234, 234);
-    border: 1px solid rgb(182, 182, 182);
+    background-color: var(--card-background-color);
+    border: 1.5px solid var(--card-border-color);
     box-shadow: rgba(145, 143, 127, 0.2) 0px 5px 20px;
     /* border: 2px solid red; */
-    border-radius: 1.5rem;
+    border-radius: 3rem;
     width: 100%;
     cursor: pointer;
 }
@@ -95,7 +139,7 @@ body {
     height: 90%;
     width: 90%;
     overflow: auto;
-    font-family: "Sour Gummy", monospace;
+    font-family: "Cabin", monospace;
     font-size: 1.2rem;
     color: rgb(79, 79, 79);
 }
@@ -119,7 +163,7 @@ body {
 
 .plus-btn {
     font-size: 120pt;
-    color: rgb(188, 188, 188);
+    color: rgb(190, 185, 160);
 }
 
 /* #btn-mark {
