@@ -16,7 +16,7 @@ function deleteCard (target) {
         target.style.scale = '0';
         setTimeout(() => {
             target.remove()
-        },250)
+        },300)
 }
 
 //add card
@@ -26,7 +26,6 @@ document.getElementById('plus').addEventListener('click', () => {
     cardArray.push(cardObject)
 })
 
-let btnContainer;
 container.addEventListener('click', (event) => {
     //isMarked
     if (event.target.matches('.mark-btn')) {
@@ -36,15 +35,6 @@ container.addEventListener('click', (event) => {
         Array.from(event.target.children)[0].classList.toggle('filled-mark')
         // console.log(cardArray[btnIndex].isMarked)
 
-    }
-    else if (event.target.matches('.area')) {
-        const popup = document.querySelector('.popup')
-        if (popup){
-            popup.classList.remove('popup')
-        }
-        btnContainer = event.target.nextElementSibling;
-        btnContainer.classList.toggle('popup');
-        event.stopPropagation();
     }
 
     //delete card
@@ -59,6 +49,19 @@ container.addEventListener('click', (event) => {
 container.addEventListener('dblclick', (event) => {
     if (event.target.matches('.area')) {
         deleteCard(event.target.parentElement);
+    }
+})
+
+container.addEventListener('contextmenu', (event) => {
+    if (event.target.matches('.area')) {
+        event.preventDefault();
+        const popup = document.querySelector('.popup')
+        if (popup){
+            popup.classList.remove('popup')
+        }
+        const btnContainer = event.target.nextElementSibling;
+        btnContainer.classList.toggle('popup');
+        event.stopPropagation();
     }
 })
 
